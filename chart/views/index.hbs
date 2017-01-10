@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Server Response | Chart Diagram</title>
+		<link href="css/bootstrap.css" media="all" rel="Stylesheet" type="text/css" />
+		<link href="css/bootstrap-datepicker.css" media="all" rel="Stylesheet" type="text/css" />
+		<link href="css/bootstrap-colorpicker.min.css" media="all" rel="Stylesheet" type="text/css" />
+		<script type="text/javascript" src="app/require.js"></script>
+		<script type="text/javascript" src="app/config.js"></script>
+	</head>
+	<body>
+		<script type="text/html" id="t_visualchartconfiguration">
+			<h1>Chart Configuration</h1>
+			<form>
+			   <% _.each(data, function(val, i) { %>
+			    <div class="col-sm-6">
+					<div class="form-group">
+						<label><%= val.name %></label>
+					</div>	
+					<div class="form-group col-xs-6">
+						<input class="form-control" data-subkey="name" data-key="<%= i %>" type="text" value="<%= val.name %>">
+					</div>	
+					<div class="form-group col-xs-6">
+						<input class="form-control colorpicker" data-subkey="color" data-key="<%= i %>" type="text" value="<%= val.color %>">
+					</div>
+				</div>
+			   <% }); %>
+			   <div class="form-group  col-xs-6">
+					<button class="btn btn-primary changeconfiguration">Save Settings</button>
+			   </div>
+			</form>		
+		</script>
+		<script type="text/html" id="t_visualchart">
+			<div id="chartContainer" style="height: 500px; width: 100%;"></div>
+		</script>
+		<script type="text/html" id="t_serverRequest">
+			<div class="row">
+				<div class="col-sm-6">
+					<h1>Server Request Form</h1>
+					<form id="serverRequest">
+						<div class="form-group">
+							<label>Server Id</label>
+							<input type="text" class="form-control" name="serverid">
+						</div>
+						<div class="form-group">
+							<label>Start Time</label>
+							<input type="text" class="form-control start date" name="serverstarttime">							
+						</div>
+						<div class="form-group">
+							<label>End Time</label>
+							<input type="text" class="form-control end date" name="serverendtime">
+						</div>
+						<div class="form-group">
+							<label>Chart Type</label>
+							<select class="form-control" name="charttype">
+								<option value="line">Line</option>
+								<option value="bar">Bar</option>
+								<option value="spline">Spiral Line</option>
+								<option value="stackedArea">Stacked Area</option>
+								<option value="column">Column</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-primary submit">Submit</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-12 visual-editor hide"></div>
+				<div class="col-sm-12 configuration hide"></div>
+			</div>
+		</script>
+		<script src="app/app.js"></script>
+	</body>
+</html>

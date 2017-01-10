@@ -1,0 +1,23 @@
+{
+  "name": "serverchart",
+  "version": "1.0.1",
+  "description": "this project will show server response in bar chart",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "hbs": "^4.0.1",
+    "random-js": "^1.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "server-bar-chart"
+  ],
+  "author": "alanmathew",
+  "license": "ISC"
+}
