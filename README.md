@@ -1,4 +1,4 @@
-# Server-Response Chart challenge
+# Server-Response Chart Challenge (Juniper Networks)
 Web development projects
 
 Given the definition of certain response (data structure is described in form of JSON schema, see response_definition.json) from server side,
